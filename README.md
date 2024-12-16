@@ -25,9 +25,11 @@ Diễn giải Classification Report
 Diễn giải Confusion Matrix
 - Ma trận nhầm lẫn hiển thị số lượng mẫu được phân loại đúng và sai giữa các lớp. Ví dụ:
 
- | Predicted Benign | Predicted Malignant
- Actual Benign | True Negatives (TN) | False Positives (FP)
- Actual Malignant | False Negatives (FN) | True Positives (TP)
+|                   | Predicted Benign | Predicted Malignant |
+|-------------------|------------------|---------------------|
+| **Actual Benign** | True Negatives (TN) | False Positives (FP) |
+| **Actual Malignant** | False Negatives (FN) | True Positives (TP)  |
+
 
 - True Positives (TP): Số mẫu ác tính (Malignant) được dự đoán đúng.
 - True Negatives (TN): Số mẫu lành tính (Benign) được dự đoán đúng.
