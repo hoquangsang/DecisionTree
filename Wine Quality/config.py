@@ -12,7 +12,9 @@ SPLIT_RATIOS = {
 DEFAULT_SPLIT = '80/20'
 
 # Đường dẫn file dữ liệu gốc
-RAW_DATA_PATH = "Data/Raw/wdbc.data"
+RAW_DATA_PATH_WHITE = "Data/Raw/winequality-white.csv"
+RAW_DATA_PATH_RED = "Data/Raw/winequality-red.csv"
+
 
 # Thư mục lưu các file CSV đã xử lý (chia nhỏ tập dữ liệu)
 PROCESSED_CSV_DIR = "Data/Processed Parts"
