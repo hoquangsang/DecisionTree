@@ -1,3 +1,5 @@
+# Link: https://archive.ics.uci.edu/dataset/73/mushroom
+
 # Giá trị ngẫu nhiên
 RANDOM_STATE = 42  
 

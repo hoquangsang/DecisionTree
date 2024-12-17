@@ -45,3 +45,41 @@ Hiệu suất mô hình: Dựa trên báo cáo và ma trận nhầm lẫn:
 - Accuracy cao với phân phối 80/20 hoặc 90/10 thường chỉ ra rằng việc tăng dữ liệu huấn luyện giúp cải thiện hiệu suất.
 - Precision và Recall của lớp ác tính đặc biệt quan trọng, do bỏ sót các trường hợp ác tính (FN cao) có thể gây hậu quả nghiêm trọng.
 
+### Tập 3:
+1. Trường hợp Accuracy = 1.000000 là hợp lý
+Mô hình đạt độ chính xác hoàn hảo có thể là điều bình thường nếu:
+
+Dữ liệu đơn giản: Các đặc trưng trong dữ liệu hoàn toàn phân tách được các lớp mà không có sự chồng chéo hoặc nhiễu.
+Ví dụ: Với dữ liệu về nấm (edible/poisonous), các đặc trưng như odor (mùi) có thể là yếu tố quyết định tuyệt đối, giúp phân loại chính xác mọi mẫu.
+Dữ liệu không có nhiễu (noise): Nếu dữ liệu sạch, ít nhiễu và có quan hệ trực tiếp giữa đặc trưng và nhãn, mô hình có thể đạt được độ chính xác cao.
+Dữ liệu kiểm tra rất nhỏ: Với tập kiểm tra có kích thước nhỏ, mô hình có thể dễ dàng dự đoán chính xác tất cả các mẫu.
+
+2. Trường hợp Accuracy = 1.000000 là vấn đề
+Nếu độ chính xác hoàn hảo xảy ra mà không có lý do hợp lý, bạn nên xem xét các vấn đề sau:
+
+a. Overfitting (Quá khớp)
+Nguyên nhân:
+Mô hình Decision Tree thường có xu hướng quá khớp nếu không được giới hạn độ sâu (max_depth) hoặc không có các biện pháp kiểm soát độ phức tạp.
+Cây quyết định có thể học thuộc lòng toàn bộ dữ liệu huấn luyện, dẫn đến độ chính xác cực cao trên tập huấn luyện hoặc kiểm tra nhỏ, nhưng kém hiệu quả khi áp dụng vào dữ liệu mới.
+Cách kiểm tra:
+So sánh độ chính xác trên tập huấn luyện với độ chính xác trên tập kiểm tra. Nếu trên tập kiểm tra lớn mà Accuracy vẫn cao, mô hình có thể hoạt động tốt. Nhưng nếu chỉ cao trên tập huấn luyện, đó là dấu hiệu của overfitting.
+b. Dữ liệu kiểm tra bị rò rỉ từ dữ liệu huấn luyện
+Nguyên nhân:
+Có khả năng dữ liệu huấn luyện và kiểm tra bị trùng lặp hoặc có mối liên hệ không mong muốn, dẫn đến việc mô hình học chính xác các mẫu kiểm tra.
+Cách kiểm tra:
+Đảm bảo dữ liệu được chia ngẫu nhiên với train_test_split và tham số stratify được sử dụng đúng.
+Kiểm tra kỹ thuật tiền xử lý, tránh việc mã hóa hoặc xử lý dựa trên toàn bộ tập dữ liệu thay vì chỉ trên tập huấn luyện.
+c. Đặc trưng mạnh vượt trội (Dominant Features)
+Nguyên nhân:
+Một hoặc nhiều đặc trưng trong dữ liệu có ảnh hưởng rất lớn, quyết định gần như hoàn toàn nhãn đầu ra.
+Điều này có thể làm cho mô hình đơn giản đạt được độ chính xác hoàn hảo mà không cần đến các đặc trưng khác.
+Cách kiểm tra:
+Xem xét mức độ quan trọng của đặc trưng (feature_importances_) trong cây quyết định. Nếu một đặc trưng chiếm gần như toàn bộ trọng số, đây là dấu hiệu của đặc trưng mạnh vượt trội.
+
+3. Khi nào cần chấp nhận Accuracy = 1.000000?
+Nếu bạn đã kiểm tra và xác nhận:
+Mô hình không bị overfitting.
+Dữ liệu kiểm tra không rò rỉ từ dữ liệu huấn luyện.
+Đặc trưng mạnh vượt trội là hợp lý với bài toán.
+Cross-validation cũng cho kết quả tương tự.
+=> Khi đó, độ chính xác hoàn hảo có thể chấp nhận được.
