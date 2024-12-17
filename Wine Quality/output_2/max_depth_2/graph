@@ -1,0 +1,17 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<alcohol &le; 10.625<br/>entropy = 0.97<br/>samples = 3918<br/>value = [848, 146, 2924]<br/>class = Standard>, fillcolor="#aa79ed"] ;
+1 [label=<volatile acidity &le; 0.203<br/>entropy = 0.711<br/>samples = 2269<br/>value = [208.0, 108.0, 1953.0]<br/>class = Standard>, fillcolor="#9457e9"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<entropy = 0.928<br/>samples = 521<br/>value = [120, 12, 389]<br/>class = Standard>, fillcolor="#aa7aee"] ;
+1 -> 2 ;
+3 [label=<entropy = 0.591<br/>samples = 1748<br/>value = [88, 96, 1564]<br/>class = Standard>, fillcolor="#8f4fe8"] ;
+1 -> 3 ;
+4 [label=<free sulfur dioxide &le; 11.5<br/>entropy = 1.105<br/>samples = 1649<br/>value = [640, 38, 971]<br/>class = Standard>, fillcolor="#d6bef6"] ;
+0 -> 4 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+5 [label=<entropy = 1.158<br/>samples = 97<br/>value = [10, 19, 68]<br/>class = Standard>, fillcolor="#b083ef"] ;
+4 -> 5 ;
+6 [label=<entropy = 1.06<br/>samples = 1552<br/>value = [630.0, 19.0, 903.0]<br/>class = Standard>, fillcolor="#dac4f7"] ;
+4 -> 6 ;
+}
