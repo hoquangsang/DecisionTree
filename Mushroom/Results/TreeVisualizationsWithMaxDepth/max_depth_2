@@ -2,12 +2,12 @@ digraph Tree {
 node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
 edge [fontname="helvetica"] ;
 0 [label=<spore-print-color &le; 0.5<br/>entropy = 0.959<br/>samples = 4515<br/>value = [2790.0, 1725.0]<br/>class = d>, fillcolor="#f5cfb3"] ;
-1 [label=<entropy = 0.0<br/>samples = 1279<br/>value = [0, 1279]<br/>class = g>, fillcolor="#399de5"] ;
+1 [label=<entropy = 0.0<br/>samples = 1274<br/>value = [0, 1274]<br/>class = g>, fillcolor="#399de5"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label=<gill-size &le; 0.5<br/>entropy = 0.579<br/>samples = 3236<br/>value = [2790, 446]<br/>class = d>, fillcolor="#e99559"] ;
+2 [label=<gill-size &le; 0.5<br/>entropy = 0.582<br/>samples = 3241<br/>value = [2790, 451]<br/>class = d>, fillcolor="#e99559"] ;
 0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-3 [label=<entropy = 0.201<br/>samples = 2686<br/>value = [2602, 84]<br/>class = d>, fillcolor="#e6853f"] ;
+3 [label=<entropy = 0.205<br/>samples = 2682<br/>value = [2596.0, 86.0]<br/>class = d>, fillcolor="#e68540"] ;
 2 -> 3 ;
-4 [label=<entropy = 0.927<br/>samples = 550<br/>value = [188, 362]<br/>class = g>, fillcolor="#a0d0f3"] ;
+4 [label=<entropy = 0.931<br/>samples = 559<br/>value = [194.0, 365.0]<br/>class = g>, fillcolor="#a2d1f3"] ;
 2 -> 4 ;
 }

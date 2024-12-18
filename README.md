@@ -11,6 +11,9 @@ https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/12
 - New và dán thư mục bin: C:\Program Files\Graphviz\bin -> OK
 - Kiểm tra: dot -V trong Command Prompt (dưới quyền Administrator nếu không được)
 
+
+ **Lưu ý trên 3 tập, có thể đặt tham số random_state = 42 thay vì None để tránh thay đổi kết quả**
+
 ### Tập 1: 
 Diễn giải Classification Report
 - Precision:
@@ -83,3 +86,18 @@ Dữ liệu kiểm tra không rò rỉ từ dữ liệu huấn luyện.
 Đặc trưng mạnh vượt trội là hợp lý với bài toán.
 Cross-validation cũng cho kết quả tương tự.
 => Khi đó, độ chính xác hoàn hảo có thể chấp nhận được.
+
+4. bộ dữ liệu này hoàn toàn đáp ứng các yêu cầu của bài toán học có giám sát:
+
+Bao gồm cả tính năng và nhãn:
+
+Bộ dữ liệu có 22 đặc trưng (features) như cap-shape, cap-color, odor, v.v., và một nhãn (label) là class, đại diện cho hai loại:
+e: Edible (ăn được).
+p: Poisonous (không ăn được).
+Đây là bài toán học có giám sát, vì dữ liệu có nhãn đầy đủ.
+Bao gồm ít nhất 300 mẫu:
+
+Bộ dữ liệu Mushroom có tổng cộng 8,124 mẫu (mỗi hàng là một mẫu nấm), vượt xa yêu cầu tối thiểu 300 mẫu để phân tích có ý nghĩa.
+Bao gồm nhiều lớp hoặc ít nhất hai lớp nhị phân:
+
+Dữ liệu này là bài toán phân loại nhị phân với hai lớp (e và p).
